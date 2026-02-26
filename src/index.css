@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  --color-gold: #C5A059;
+  --color-gold-light: #D4B982;
+  --color-premium-black: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-white text-premium-black antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #C5A059 0%, #D4B982 100%);
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #C5A059 0%, #D4B982 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Lightbox styles */
+.lightbox-overlay {
+  @apply fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 cursor-zoom-out;
+}
+
+.lightbox-content {
+  @apply max-w-full max-h-full object-contain rounded-lg shadow-2xl;
+}
